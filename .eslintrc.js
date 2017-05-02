@@ -24,21 +24,21 @@ module.exports = {
     // add your custom rules here
     'rules': {
         // don't require .vue extension when importing
-        // 'import/extensions': ['error', 'always', {
+        // 'import/extensions': ['off', 'always', {
         //     'js': 'never',
         //     'vue': 'never'
         // }],
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
         /*
-         * Possible Errors
+         * Possible offs
          */
 
         // disallow unnecessary parentheses
-        'no-extra-parens': ['error', 'all', {'nestedBinaryExpressions': false}],
+        'no-extra-parens': ['off', 'all', {'nestedBinaryExpressions': false}],
 
         // disallow negating the left operand of relational operators
-        'no-unsafe-negation': 'error',
+        'no-unsafe-negation': 'off',
 
         // enforce valid JSDoc comments
         'valid-jsdoc': 'off',
@@ -48,213 +48,213 @@ module.exports = {
          */
 
         // enforce return statements in callbacks of array methods
-        'array-callback-return': 'error',
+        'array-callback-return': 'off',
 
         // enforce consistent brace style for all control statements
-        curly: ['error', 'multi-line'],
+        curly: ['off', 'multi-line'],
 
         // enforce consistent newlines before and after dots
-        'dot-location': ['error', 'property'],
+        'dot-location': ['off', 'property'],
 
         // enforce dot notation whenever possible
-        'dot-notation': 'error',
+        'dot-notation': 'off',
 
         // require the use of === and !==
-        'eqeqeq': ['error', 'smart'],
+        'eqeqeq': ['off', 'smart'],
 
         // disallow the use of arguments.caller or arguments.callee
-        'no-caller': 'error',
+        'no-caller': 'off',
 
         // disallow empty functions
-        'no-empty-function': 'error',
+        'no-empty-function': 'off',
 
         // disallow unnecessary calls to .bind()
-        'no-extra-bind': 'error',
+        'no-extra-bind': 'off',
 
         // disallow unnecessary labels
-        'no-extra-label': 'error',
+        'no-extra-label': 'off',
 
         // disallow leading or trailing decimal points in numeric literals
-        'no-floating-decimal': 'error',
+        'no-floating-decimal': 'off',
 
         // disallow assignments to native objects or read-only global variables
-        'no-global-assign': 'error',
+        'no-global-assign': 'off',
 
         // disallow the use of eval()-like methods
-        'no-implied-eval': 'error',
+        'no-implied-eval': 'off',
 
         // disallow the use of the __iterator__ property
-        'no-iterator': 'error',
+        'no-iterator': 'off',
 
         // disallow unnecessary nested blocks
-        'no-lone-blocks': 'error',
+        'no-lone-blocks': 'off',
 
         // disallow multiple spaces
-        'no-multi-spaces': 'error',
+        'no-multi-spaces': 'off',
 
         // disallow new operators with the String, Number, and Boolean objects
-        'no-new-wrappers': 'error',
+        'no-new-wrappers': 'off',
 
         // disallow octal escape sequences in string literals
-        'no-octal-escape': 'error',
+        'no-octal-escape': 'off',
 
         // disallow the use of the __proto__ property
-        'no-proto': 'error',
+        'no-proto': 'off',
 
         // disallow comparisons where both sides are exactly the same
-        'no-self-compare': 'error',
+        'no-self-compare': 'off',
 
         // disallow throwing literals as exceptions
-        'no-throw-literal': 'error',
+        'no-throw-literal': 'off',
 
         // disallow unused expressions
-        'no-unused-expressions': 'error',
+        'no-unused-expressions': 'off',
 
         // disallow unnecessary calls to .call() and .apply()
-        'no-useless-call': 'error',
+        'no-useless-call': 'off',
 
         // disallow unnecessary concatenation of literals or template literals
-        'no-useless-concat': 'error',
+        'no-useless-concat': 'off',
 
         // disallow unnecessary escape characters
-        'no-useless-escape': 'error',
+        'no-useless-escape': 'off',
 
         // disallow void operators
-        'no-void': 'error',
+        'no-void': 'off',
 
         // require parentheses around immediate function invocations
-        'wrap-iife': 'error',
+        'wrap-iife': 'off',
 
         // require or disallow “Yoda” conditions
-        yoda: 'error',
+        yoda: 'off',
 
         /*
          * Variables
          */
 
         // disallow labels that share a name with a variable
-        'no-label-var': 'error',
+        'no-label-var': 'off',
 
         // disallow initializing variables to undefined
-        'no-undef-init': 'error',
+        'no-undef-init': 'off',
         'no-undef': 'off',
         // disallow the use of variables before they are defined
-        'no-use-before-define': 'error',
+        'no-use-before-define': 'off',
 
         /*
          * Node.js and CommonJS
          */
 
         // disallow new operators with calls to require
-        'no-new-require': 'error',
+        'no-new-require': 'off',
 
         /*
          * Stylistic Issues
          */
 
         // enforce consistent spacing inside array brackets
-        'array-bracket-spacing': 'error',
+        'array-bracket-spacing': 'off',
 
         // enforce consistent spacing inside single-line blocks
-        'block-spacing': 'error',
+        'block-spacing': 'off',
 
         // enforce consistent brace style for blocks
-        'brace-style': ['error', '1tbs', {'allowSingleLine': true}],
+        'brace-style': ['off', '1tbs', {'allowSingleLine': true}],
 
         // require or disallow trailing commas
-        'comma-dangle': 'error',
+        'comma-dangle': 'off',
 
         // enforce consistent spacing before and after commas
-        'comma-spacing': 'error',
+        'comma-spacing': 'off',
 
         // enforce consistent comma style
-        'comma-style': 'error',
+        'comma-style': 'off',
 
         // enforce consistent spacing inside computed property brackets
-        'computed-property-spacing': 'error',
+        'computed-property-spacing': 'off',
 
         // require or disallow spacing between function identifiers and their invocations
-        'func-call-spacing': 'error',
+        'func-call-spacing': 'off',
 
         // enforce consistent indentation
-        indent: ['error', 2, {SwitchCase: 1}],
+        indent: ['off', 2, {SwitchCase: 1}],
 
         // enforce the consistent use of either double or single quotes in JSX attributes
-        'jsx-quotes': 'error',
+        'jsx-quotes': 'off',
 
         // enforce consistent spacing between keys and values in object literal properties
-        'key-spacing': 'error',
+        'key-spacing': 'off',
 
         // enforce consistent spacing before and after keywords
-        'keyword-spacing': 'error',
+        'keyword-spacing': 'off',
 
         // enforce consistent linebreak style
-        'linebreak-style': 'error',
+        'linebreak-style': 'off',
 
         // require or disallow newlines around directives
-        'lines-around-directive': 'error',
+        'lines-around-directive': 'off',
 
         // require constructor names to begin with a capital letter
         'new-cap': 'off',
 
         // require parentheses when invoking a constructor with no arguments
-        'new-parens': 'error',
+        'new-parens': 'off',
 
         // disallow Array constructors
-        'no-array-constructor': 'error',
+        'no-array-constructor': 'off',
 
         // disallow Object constructors
-        'no-new-object': 'error',
+        'no-new-object': 'off',
 
         // disallow trailing whitespace at the end of lines
-        'no-trailing-spaces': 'error',
+        'no-trailing-spaces': 'off',
 
         // disallow ternary operators when simpler alternatives exist
-        'no-unneeded-ternary': 'error',
+        'no-unneeded-ternary': 'off',
 
         // disallow whitespace before properties
-        'no-whitespace-before-property': 'error',
+        'no-whitespace-before-property': 'off',
 
         // enforce consistent spacing inside braces
-        'object-curly-spacing': ['error', 'always'],
+        'object-curly-spacing': ['off', 'always'],
 
         // require or disallow padding within blocks
-        'padded-blocks': ['error', 'never'],
+        'padded-blocks': ['off', 'never'],
 
         // require quotes around object literal property names
-        'quote-props': ['error', 'as-needed'],
+        'quote-props': ['off', 'as-needed'],
 
         // enforce the consistent use of either backticks, double, or single quotes
-        quotes: ['error', 'single'],
+        quotes: ['off', 'single'],
 
         // enforce consistent spacing before and after semicolons
-        'semi-spacing': 'error',
+        'semi-spacing': 'off',
 
         // require or disallow semicolons instead of ASI
-        // semi: ['error', 'never'],
+        // semi: ['off', 'never'],
 
         // enforce consistent spacing before blocks
-        'space-before-blocks': 'error',
+        'space-before-blocks': 'off',
 
         'no-console': 'off',
 
         // enforce consistent spacing before function definition opening parenthesis
-        'space-before-function-paren': ['error', 'never'],
+        'space-before-function-paren': ['off', 'never'],
 
         // enforce consistent spacing inside parentheses
-        'space-in-parens': 'error',
+        'space-in-parens': 'off',
 
         // require spacing around infix operators
-        'space-infix-ops': 'error',
+        'space-infix-ops': 'off',
 
         // enforce consistent spacing before or after unary operators
-        'space-unary-ops': 'error',
+        'space-unary-ops': 'off',
 
         // enforce consistent spacing after the // or /* in a comment
-        'spaced-comment': 'error',
+        'spaced-comment': 'off',
 
         // require or disallow Unicode byte order mark (BOM)
-        'unicode-bom': 'error',
+        'unicode-bom': 'off',
 
 
         /*
@@ -262,57 +262,57 @@ module.exports = {
          */
 
         // require braces around arrow function bodies
-        'arrow-body-style': 'error',
+        'arrow-body-style': 'off',
 
         // require parentheses around arrow function arguments
-        'arrow-parens': ['error', 'as-needed'],
+        'arrow-parens': ['off', 'as-needed'],
 
         // enforce consistent spacing before and after the arrow in arrow functions
-        'arrow-spacing': 'error',
+        'arrow-spacing': 'off',
 
         // enforce consistent spacing around * operators in generator functions
-        'generator-star-spacing': ['error', 'after'],
+        'generator-star-spacing': ['off', 'after'],
 
         // disallow duplicate module imports
-        'no-duplicate-imports': 'error',
+        'no-duplicate-imports': 'off',
 
         // disallow unnecessary computed property keys in object literals
-        'no-useless-computed-key': 'error',
+        'no-useless-computed-key': 'off',
 
         // disallow unnecessary constructors
-        'no-useless-constructor': 'error',
+        'no-useless-constructor': 'off',
 
         // disallow renaming import, export, and destructured assignments to the same name
-        'no-useless-rename': 'error',
+        'no-useless-rename': 'off',
 
         // require let or const instead of var
-        'no-var': 'error',
+        'no-var': 'off',
 
         // require or disallow method and property shorthand syntax for object literals
-        'object-shorthand': 'error',
+        'object-shorthand': 'off',
 
         // require arrow functions as callbacks
-        'prefer-arrow-callback': 'error',
+        'prefer-arrow-callback': 'off',
 
         // require const declarations for variables that are never reassigned after declared
-        'prefer-const': 'error',
+        'prefer-const': 'off',
 
         // disallow parseInt() in favor of binary, octal, and hexadecimal literals
-        'prefer-numeric-literals': 'error',
+        'prefer-numeric-literals': 'off',
 
         // require rest parameters instead of arguments
-        'prefer-rest-params': 'error',
+        'prefer-rest-params': 'off',
 
         // require spread operators instead of .apply()
-        'prefer-spread': 'error',
+        'prefer-spread': 'off',
 
         // enforce spacing between rest and spread operators and their expressions
-        'rest-spread-spacing': 'error',
+        'rest-spread-spacing': 'off',
 
         // require or disallow spacing around embedded expressions of template strings
-        'template-curly-spacing': 'error',
+        'template-curly-spacing': 'off',
 
         // require or disallow spacing around the * in yield* expressions
-        'yield-star-spacing': 'error'
+        'yield-star-spacing': 'off'
     }
 }
