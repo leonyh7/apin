@@ -1,5 +1,5 @@
 <template>
-  <el-breadcrumb class="app-levelbar" separator=">">
+  <el-breadcrumb class="app-levelbar" separator="/">
     <el-breadcrumb-item v-for="(item,index)  in levelList" :key="item">
       <router-link v-if='item.redirect==="noredirect"||index==levelList.length-1' to="" class="no-redirect">{{item.name}}</router-link>
       <router-link v-else :to="item.path">{{item.name}}</router-link>
@@ -36,7 +36,8 @@
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
     .app-levelbar.el-breadcrumb {
-        font-size: inherit;
+        display: inline-block;
+        font-size: 14px;
         line-height: 50px;
         margin-left: 10px;
         flex: auto;
@@ -44,8 +45,5 @@
           color: #97a8be;
           cursor:text;
         }
-    }
-    .el-breadcrumb__separator, .el-breadcrumb__item__inner, .el-breadcrumb__item__inner a, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner a:hover, .el-breadcrumb__item:last-child .el-breadcrumb__item__inner:hover {
-      color: #fff;
     }
 </style>

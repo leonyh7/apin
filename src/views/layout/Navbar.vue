@@ -10,19 +10,15 @@
         <el-dropdown trigger="click" title="通知">
             <i class="el-icon-message apin-icon"></i>
             <el-dropdown-menu slot="dropdown" class="apin-notice-result">
-                <el-dropdown-item class="no-data">
+                <div class="no-data">
                     此会话中无新通知
-                </el-dropdown-item>
+                </div>
             </el-dropdown-menu>
         </el-dropdown>
-        <el-dropdown trigger="click" title="设置">
+        <div trigger="click" title="设置">
             <i class="el-icon-setting apin-icon"></i>
-            <el-dropdown-menu slot="dropdown" class="apin-setting-result">
-                <el-dropdown-item>
-                    注销
-                </el-dropdown-item>
-            </el-dropdown-menu>
-        </el-dropdown>
+            
+        </div>
         <el-dropdown trigger="click" title="帮助">
             <i class="el-icon-information apin-icon"></i>
             <el-dropdown-menu slot="dropdown" class="apin-help-result">
@@ -42,15 +38,7 @@
                 <img class="user-avatar" :src="avatar+'?imageView2/1/w/80/h/80'">
             </div>
             <el-dropdown-menu class="user-dropdown apin-user-result" slot="dropdown">
-                <el-dropdown-item>
-                    注销
-                </el-dropdown-item>
-                <!--<router-link  class='inlineBlock' to="/admin/profile">
-                                                            <el-dropdown-item>
-                                                                设置
-                                                            </el-dropdown-item>
-                                                        </router-link>-->
-                <el-dropdown-item><span @click="logout" style="display:block;">退出登录</span></el-dropdown-item>
+                <el-dropdown-item><span @click="logout" style="display:block;">注销</span></el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
     </el-menu>
@@ -74,7 +62,14 @@ export default {
             log: errLogStore.state.errLog,
             restaurants: [],
             state: '',
-            timeout: null
+            timeout: null,
+            colors: [{
+                color: '#202428',
+                themeName: ''
+            }, {
+                color: '#eee',
+                themeName: 'custom-theme'
+            }]
         }
     },
     computed: {
@@ -85,6 +80,10 @@ export default {
         ])
     },
     methods: {
+        setTheme(value) {
+            var element = document.body;
+            element.className = value;
+        },
         toggleSideBar() {
             this.$store.dispatch('ToggleSideBar')
         },
@@ -172,139 +171,48 @@ export default {
 }
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
-%shadow {
-    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, .3);
-}
-
 .navbar {
-    display: flex;
+    .logo {
+        padding: 0 10px;
+    }
     height: 50px;
     line-height: 50px;
-    padding-left: 10px;
     border-radius: 0px !important;
-    background-color: #202428;
-    color: #fff;
-    font-size: 16px;
-    .el-dropdown {
-        color: inherit;
-    }
+    display: flex;
     .hamburger-container {
         line-height: 58px;
         height: 50px;
         padding: 0 10px;
     }
-    .errLog-container {
-        display: inline-block;
-        position: absolute;
-        right: 150px;
-    }
     .avatar-container {
+        height: 50px;
         .avatar-wrapper {
-            position: relative;
-            margin-top: 5px;
-            padding-right: 10px;
             cursor: pointer;
+            margin-top: 5px;
+            position: relative;
             .user-avatar {
                 width: 40px;
                 height: 40px;
-                border-radius: 50%;
+                border-radius: 10px;
             }
         }
     }
     .apin-search {
         position: relative;
         width: 400px;
-        color: white;
     }
-    .apin-icon {
-        width: 40px;
-        font-size: 16px;
-        text-align: center;
-        border-right: 1px solid rgba(128, 128, 128, 0.4);
-        cursor: pointer;
-    }
-}
-
-.apin-notice {
-    .apin-notice-result {
-        @extend %shadow;
-        width: 355px;
-    }
-    .no-data {
-        text-align: center;
-        width: 100%;
-        height: 130px;
-        line-height: 130px;
-    }
+    .apin-notice {}
 }
 </style>
-<style lang="scss">
-.apin-search {
-    .el-input__inner {
-        border-width: 0;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-        padding-left: 30px;
-        background-color: #454545;
-        color: #fff;
-    }
-    .el-input-group__prepend {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 16px;
-        height: 36px;
-        line-height: 36px;
-        border: none;
-        background-color: transparent;
-        color: #fff;
-        .el-icon-search {
-            vertical-align: middle;
-        }
-    }
-}
-
+<style>
 .el-dropdown-menu[class*="apin-"] {
     margin: 0;
-    background-color: #454545;
-    border: none;
-    color: #fff;
-    .el-dropdown-menu__item:not(.is-disabled):hover {
-        color: #fff;
-        background-color: #3d4247;
-    }
 }
-
-.apin-notice-result {
-    width: 355px;
-    .no-data {
-        height: 130px;
-        line-height: 130px;
-        text-align: center;
-        &:not(.is-disabled):hover {
-            color: #fff;
-            background-color: transparent;
-        }
-    }
-}
-.apin-help-result {
-    width: 220px;
-}
-.apin-setting-result {
-    width: 340px;
-}
-.apin-user-result {
-    width: 220px;
-}
-.el-dropdown-menu__item--divided {
-    border-top-color: #fff!important;
-}
-.el-dropdown-menu__item--divided:before {
-    background-color: transparent!important;
-}
-
-.el-autocomplete-suggestion {
-    margin-top: 7px!important;
+.no-data {
+    width: 336px;
+    height: 126px;
+    line-height: 126px;
+    text-align: center;
 }
 </style>
 

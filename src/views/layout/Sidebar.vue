@@ -1,5 +1,5 @@
 <template>
-    <el-menu mode="vertical" :default-active="$route.path">
+    <el-menu mode="vertical" theme="dark" :default-active="$route.path">
         <template v-for="item in permissionRoutes" v-if="!item.hidden">
             <el-submenu :index="item.name" v-if="!item.noDropdown">
                 <template slot="title">
@@ -39,7 +39,6 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
     .el-menu {
-        border-radius: 0;
         min-height: 100%;
     }
     .wscn-icon {
