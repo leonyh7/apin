@@ -8,20 +8,20 @@
             <div class="main-container">
                 <App-main/>
             </div>
-            <div class="apin-setting-detail" v-show="settingShow">
-                <i class="icon-close" @click="hideSetting"></i>
-                <h4 class="apin-setting-title apin-setting-separator">门户设置</h4>
+            <div class="apin-setting-detail">
+                <i class="icon-close"></i>
+                <div class="apin-setting-title">门户设置</div>
                 <div class="apin-setting-content">
-                    <h6 class="apin-setting-item">
-              设置1
-            </h6>
-                    <div class="apin-setting-color">
-                        <div class="apin-color-option" v-for="(theme, name) in colors" :style="{backgroundColor: theme,width:'30px',height:'30px'}" @click="changeTheme(name)"></div>
+                    <div class="apin-setting-item">
+                        设置1
                     </div>
+                    <span class="field-label">换肤:</span>
+                    <el-switch v-model="theme" on-text="" off-text="">
+                    </el-switch>
                 </div>
                 <div class="apin-setting-option">
-                    <button class="btn btn-success">确认</button>
-                    <button class="btn btn-default">取消</button>
+                    <el-button type="primary">确认</el-button>
+                    <el-button>取消</el-button>
                 </div>
             </div>
         </main>
@@ -30,6 +30,7 @@
 
 <script>
 import { Navbar, Sidebar, AppMain } from 'views/layout';
+import { toggleClass } from 'utils';
 import store from 'store';
 import router from 'router';
 import permission from 'store/permission';
@@ -42,9 +43,19 @@ export default {
         Sidebar,
         AppMain
     },
+    data() {
+        return {
+            theme: ''
+        }
+    },
     computed: {
         sidebar() {
             return this.$store.state.app.sidebar;
+        }
+    },
+    watch: {
+        theme() {
+            toggleClass(document.body, 'custom-theme')
         }
     },
     beforeRouteEnter: (to, from, next) => {
@@ -81,6 +92,7 @@ export default {
     main {
         display: flex;
         flex: 1;
+        position: relative;
         &.hideSidebar {
             .sidebar-wrapper {
                 transform: translate(-140px, 0);
@@ -111,6 +123,33 @@ export default {
         overflow-y: auto;
         transition: all .28s ease-out;
         @include scrollBar;
+    }
+    .apin-setting-detail {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 340px;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 25px 25px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+        display: flex;
+        flex-direction: column;
+    }
+    .apin-setting-title {
+        margin: 25px 0 10px;
+        flex: none;
+        border-bottom: 1px solid #d1dbe5;
+    }
+    .apin-setting-content {
+        flex: 1;
+    }
+    .apin-setting-item {
+        margin: 10px 0;
+    }
+    .apin-setting-option {
+        flex: none;
     }
 }
 </style>
