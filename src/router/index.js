@@ -59,6 +59,9 @@ const Form1 = resolve => require(['../views/example/form1'], resolve);
 /* permission */
 const Permission = resolve => require(['../views/permission/index'], resolve);
 
+/* 出票审核 */
+const Examine = resolve => require(['../views/examine/list'], resolve);
+
 
 Vue.use(Router);
 
@@ -78,6 +81,16 @@ export default new Router({
           name: '首页',
           hidden: true,
           children: [{ path: 'dashboard', component: dashboard }]
+        },  {
+          path: '/examine',
+          component: Layout,
+          redirect: 'noredirect',
+          name: 'examine',
+          icon: 'theme',
+          noDropdown: true,
+          children: [
+                { path: 'index', component: Examine, name: '出票审核' }
+          ]
         }, {
           path: '/introduction',
           component: Layout,

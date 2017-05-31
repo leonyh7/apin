@@ -8,7 +8,7 @@
             <div class="main-container">
                 <App-main/>
             </div>
-            <div class="apin-setting-detail">
+            <div class="apin-setting-detail" v-show="setting.opened">
                 <i class="icon-close"></i>
                 <div class="apin-setting-title">门户设置</div>
                 <div class="apin-setting-content">
@@ -20,8 +20,8 @@
                     </el-switch>
                 </div>
                 <div class="apin-setting-option">
-                    <el-button type="primary">确认</el-button>
-                    <el-button>取消</el-button>
+                    <el-button type="primary" @click="confirm">确认</el-button>
+                    <el-button @click="cancel">取消</el-button>
                 </div>
             </div>
         </main>
@@ -51,6 +51,20 @@ export default {
     computed: {
         sidebar() {
             return this.$store.state.app.sidebar;
+        },
+        setting() {
+            return this.$store.state.app.setting;
+        }
+    },
+    methods: {
+        close () {
+            store.dispatch('ToggleSetting')
+        },
+        confirm () {
+            this.close()
+        },
+        cancel () {
+            this.close()
         }
     },
     watch: {
@@ -66,6 +80,7 @@ export default {
         }
 
         // loadingInstance = Loading.service({ fullscreen: true, text: '玩命加载中' });
+
         store.dispatch('GetInfo').then(() => {
             permission.init({
                 roles: store.getters.roles,

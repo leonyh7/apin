@@ -15,9 +15,8 @@
                 </div>
             </el-dropdown-menu>
         </el-dropdown>
-        <div trigger="click" title="设置">
+        <div title="设置" @click="toggleSetting">
             <i class="el-icon-setting apin-icon"></i>
-            
         </div>
         <el-dropdown trigger="click" title="帮助">
             <i class="el-icon-information apin-icon"></i>
@@ -86,6 +85,9 @@ export default {
         },
         toggleSideBar() {
             this.$store.dispatch('ToggleSideBar')
+        },
+        toggleSetting() {
+            this.$store.dispatch('ToggleSetting')
         },
         logout() {
             this.$store.dispatch('LogOut').then(() => {
